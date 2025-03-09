@@ -6,13 +6,10 @@ public:
         unordered_map<int, int> freqMap;
 
         for(int i=0; i<size; i++){
-            freqMap[nums[i]]++; 
-        }
-
-        for(auto it: freqMap){
-            if(it.second > 1){
+            if(freqMap.count(nums[i])){
                 return true;
             }
+            freqMap[nums[i]] = 1; 
         }
 
         return false;
